@@ -26,7 +26,7 @@
 					<p>Your Account:</p>
 					<p>Email: ".$email."</p>
 					<p>Please click the link below to reset your password.</p>
-					<a href='http://localhost/ecommerce/password_reset.php?code=".$code."&user=".$row['id']."'>Reset Password</a>
+					<a href='http://fortunate.me/password_reset.php?code=".$code."&user=".$row['id']."'>Reset Password</a>
 				";
 
 				//Load phpmailer
@@ -38,8 +38,8 @@
 			        $mail->isSMTP();                                     
 			        $mail->Host = 'smtp.gmail.com';                      
 			        $mail->SMTPAuth = true;                               
-			        $mail->Username = 'servanterick@gmail.com';     
-			        $mail->Password = '@E40782174o';                    
+			        $mail->Username = 'mutoorom@gmail.com';     
+			        $mail->Password = 'gnsi ltcz hqyy arlc';                    
 			        $mail->SMTPOptions = array(
 			            'ssl' => array(
 			            'verify_peer' => false,
@@ -50,15 +50,15 @@
 			        $mail->SMTPSecure = 'ssl';                           
 			        $mail->Port = 465;                                   
 
-			        $mail->setFrom('servanterick@gmail.com');
+			        $mail->setFrom('mutoorom@gmail.com');
 			        
 			        //Recipients
 			        $mail->addAddress($email);              
-			        $mail->addReplyTo('servanterick@gmail.com');
+			        $mail->addReplyTo('mutoorom@gmail.com');
 			       
 			        //Content
 			        $mail->isHTML(true);                                  
-			        $mail->Subject = 'ECommerce Site Password Reset';
+			        $mail->Subject = 'GMK ECommerce Site Password Reset';
 			        $mail->Body    = $message;
 
 			        $mail->send();
