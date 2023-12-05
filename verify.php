@@ -13,7 +13,8 @@
 			$stmt->execute(['email'=>$email]);
 			$row = $stmt->fetch();
 			if($row['numrows'] > 0){
-				if($row['status']){
+				// Removing the check for account activation
+				// if($row['status']){
 					if(password_verify($password, $row['password'])){
 						if($row['type']){
 							$_SESSION['admin'] = $row['id'];
@@ -25,10 +26,10 @@
 					else{
 						$_SESSION['error'] = 'Incorrect Password';
 					}
-				}
-				else{
-					$_SESSION['error'] = 'Account not activated.';
-				}
+				// }
+				// else{
+				// 	$_SESSION['error'] = 'Account not activated.';
+				// }
 			}
 			else{
 				$_SESSION['error'] = 'Email not found';
@@ -40,11 +41,10 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Input login credentails first';
+		$_SESSION['error'] = 'Input login credentials first';
 	}
 
 	$pdo->close();
 
 	header('location: login.php');
-
 ?>
